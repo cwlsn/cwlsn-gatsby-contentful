@@ -1,22 +1,33 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { css } from 'emotion'
+import { injectGlobal } from 'styled-components'
 
-import Layout from '../components/layout'
+import Container from '../components/Container'
+import Header from '../components/Header'
+import Currently from '../components/Currently'
+import Social from '../components/Social'
+import RepoLink from '../components/RepoLink'
+import styles from '../config/styles'
 
-const header = css({
-  color: '#0505',
-})
+injectGlobal`
+	@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Oswald:600|Vollkorn');
+
+	body {
+		margin: 0;
+		color: #333;
+		font-family: ${styles.fonts.copy};
+		background: #ecf0f1;
+	}
+`
 
 class IndexPage extends Component {
   render() {
     return (
-      <Layout>
-        <h1 className={header}>Hi people</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link to="/page-2/">Go to page 2</Link>
-      </Layout>
+      <Container>
+        <Header />
+        <Currently />
+        <Social />
+        <RepoLink />
+      </Container>
     )
   }
 }
