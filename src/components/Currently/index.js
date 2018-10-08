@@ -66,9 +66,11 @@ const ItemTitle = styled.h3`
 	}
 `
 
-const ItemText = styled.p`
-  padding: 0 0 0 10px;
-  font-size: 18px;
+const ItemText = styled.div`
+  & > p {
+    padding: 0 0 0 10px;
+    font-size: 18px;
+  }
 `
 
 const SlidesLink = styled.a`
