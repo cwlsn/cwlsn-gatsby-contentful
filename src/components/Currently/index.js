@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 import styles from '../../config/styles'
 
 const Wrapper = styled.section`
@@ -33,18 +34,16 @@ const StyledSubHeading = styled(StyledHeading)`
   font-size: normal;
 `
 
-const Copy = styled.p`
-  color: #333;
-  font-size: 18px;
-  line-height: 1.45;
-`
+const Copy = styled.div`
+  & > p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.45;
+  }
 
-const TulipLink = styled.a`
-  color: #f15f77;
-`
-
-const BridgeLink = styled.a`
-  color: #2fa1d4;
+  & > p > a {
+    color: #2fa1d4;
+  }
 `
 
 const List = styled.ul`
@@ -52,7 +51,9 @@ const List = styled.ul`
   padding: 0;
 `
 
-const Item = styled.li
+const Item = styled.li`
+  line-height: 1;
+`
 
 const ItemTitle = styled.h3`
 	margin: 0;
@@ -70,65 +71,108 @@ const ItemText = styled.p`
   font-size: 18px;
 `
 
-const Code = styled.pre`
-  padding: 20px;
-  margin: 0 10px 30px 10px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  font-size: 18px;
-  background: #e7f0f5;
-  color: #114c59;
+const SlidesLink = styled.a`
+  color: #fff;
+  background: #57b3c7;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin: 0 10px 10px;
+  display: inline-block;
+  text-decoration: none;
 `
 
 const Currently = () => (
   <Wrapper>
     <Line />
-    <StyledHeading>Currently Busy With</StyledHeading>
-    <Copy>
-      I'm a front-end developer at{' '}
-      <TulipLink href="https://tulip.com">Tulip</TulipLink> and instructing the
-      first Tulip cohort of{' '}
-      <BridgeLink href="http://bridgeschool.io/">Bridge</BridgeLink>.
-    </Copy>
-    <Copy>
-      While I develop more tools to use with my own spare projects, I plan to
-      keep each new tool open source, so keep an eye on my GitHub!
-    </Copy>
-    <List>
-      <Item>
-        <ItemTitle>
-          🙈 <a href="https://github.com/cwlsn/nitpick">Nitpick</a>
-        </ItemTitle>
-        <ItemText>
-          A command-line tool that harasses you about your bad project setup.
-        </ItemText>
-        <Code>npm i -g nitpick</Code>
-      </Item>
-      <Item>
-        <ItemTitle>
-          📅 <a href="https://github.com/cwlsn/ics-to-json">ics-to-json</a>
-        </ItemTitle>
-        <ItemText>
-          Convert ICS calendars (eg. Google Calendar) to an opinionated JSON
-          format.
-        </ItemText>
-      </Item>
-    </List>
-    <StyledSubHeading>Past Talks</StyledSubHeading>
-    <List>
-      <Item>
-        <ItemTitle>
-          ⚛️{' '}
-          <a href="http://cwlsn.com/talks/Atomic%20Design%20in%20React.pdf">
-            Atomic Design in React
-          </a>
-        </ItemTitle>
-        <ItemText>
-          A quick talk about Atomic Design in React at DevhubTO on August 9th,
-          2018.
-        </ItemText>
-      </Item>
-    </List>
+    <StaticQuery
+      query={graphql`
+        query CurrentlySection {
+          contentfulCurrent {
+            title
+            blurb {
+              childMarkdownRemark {
+                html
+              }
+            }
+          }
+          allContentfulProjects {
+            projects: edges {
+              project: node {
+                id
+                title
+                link
+                content {
+                  childMarkdownRemark {
+                    html
+                  }
+                }
+              }
+            }
+          }
+          allContentfulTalks {
+            talks: edges {
+              talk: node {
+                id
+                title
+                blurb {
+                  childMarkdownRemark {
+                    html
+                  }
+                }
+                slides {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={({
+        contentfulCurrent,
+        allContentfulProjects,
+        allContentfulTalks,
+      }) => (
+        <>
+          <StyledHeading>{contentfulCurrent.title}</StyledHeading>
+          <Copy
+            dangerouslySetInnerHTML={{
+              __html: contentfulCurrent.blurb.childMarkdownRemark.html,
+            }}
+          />
+          <StyledSubHeading>Open Source</StyledSubHeading>
+          <List>
+            {allContentfulProjects.projects.map(({ project }) => (
+              <Item key={project.id}>
+                <ItemTitle>
+                  <a href={project.link}>{project.title}</a>
+                </ItemTitle>
+                <ItemText
+                  dangerouslySetInnerHTML={{
+                    __html: project.content.childMarkdownRemark.html,
+                  }}
+                />
+              </Item>
+            ))}
+          </List>
+          <StyledSubHeading>Past Talks</StyledSubHeading>
+          <List>
+            {allContentfulTalks.talks.map(({ talk }) => (
+              <Item key={talk.id}>
+                <ItemTitle>{talk.title}</ItemTitle>
+                <ItemText
+                  dangerouslySetInnerHTML={{
+                    __html: talk.blurb.childMarkdownRemark.html,
+                  }}
+                />
+                <SlidesLink href={talk.slides.file.url}>Slides</SlidesLink>
+              </Item>
+            ))}
+          </List>
+        </>
+      )}
+    />
   </Wrapper>
 )
 
