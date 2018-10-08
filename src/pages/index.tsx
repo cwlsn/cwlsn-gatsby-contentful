@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { injectGlobal } from 'styled-components'
+import Helmet from 'react-helmet'
 
 import Container from '../components/Container'
 import Header from '../components/Header'
@@ -22,12 +23,15 @@ injectGlobal`
 class IndexPage extends Component {
   render() {
     return (
-      <Container>
-        <Header />
-        <Currently />
-        <Social />
-        <RepoLink />
-      </Container>
+      <>
+        <Helmet title="Connor Wilson | Front-end Developer" />
+        <Container>
+          <Header />
+          <Currently />
+          <Social />
+          <RepoLink />
+        </Container>
+      </>
     )
   }
 }
