@@ -97,20 +97,21 @@ const Currently = () => (
               }
             }
           }
-          allContentfulProjects {
-            projects: edges {
-              project: node {
-                id
-                title
-                link
-                content {
-                  childMarkdownRemark {
-                    html
-                  }
-                }
-              }
-            }
-          }
+						allContentfulProjects(sort: {fields: order}) {
+							projects: edges {
+								project: node {
+									order
+									id
+									title
+									link
+									content {
+										childMarkdownRemark {
+											html
+										}
+									}
+								}
+							}
+						}
           allContentfulTalks {
             talks: edges {
               talk: node {
