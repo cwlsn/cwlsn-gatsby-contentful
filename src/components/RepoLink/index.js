@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 const Wrapper = styled.footer`
   text-align: center;
   margin: 0 20px 40px;
-  font-size: 18px;
+  font-size: 21px;
   color: #999;
 `
 
@@ -22,6 +22,11 @@ const Copy = styled.div`
   & > p > a {
     color: #df8f27;
     margin: 0;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #a76612;
+    }
   }
 `
 

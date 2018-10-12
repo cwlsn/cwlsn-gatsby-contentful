@@ -6,11 +6,11 @@ import styles from '../../config/styles'
 import face from './face.jpg'
 import label from './label.svg'
 
-const Wrapper = styled.header`
+const Wrapper = styled.section`
   background: #fff;
-  padding: 20px 20px 10px;
-  margin: 80px 20px 40px;
-  border-radius: 4px;
+  padding: 40px 40px 30px;
+  margin: 80px 10px 40px;
+  border-radius: 8px;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
   position: relative;
 `
@@ -23,12 +23,12 @@ const Line = styled.div`
 `
 
 const StyledFace = styled.img`
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
   display: block;
-  border-radius: 72px;
+  border-radius: 100px;
   position: absolute;
-  top: -36px;
+  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
@@ -51,24 +51,21 @@ const Title = styled.h1`
   color: #43d76d;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
-  font-weight: 600;
   line-height: 1;
-  font-size: 36px;
+  font-size: 42px;
 `
 
 const SubHead = styled.h2`
-  color: #999;
+  color: #bbb;
   margin: 0;
   padding: 8px 0 0 0;
-  font-weight: normal;
   line-height: 1;
-  font-size: 18px;
+  font-size: 21px;
 `
 
 const Copy = styled.p`
   font-size: 21px;
-  line-height: 28px;
+  line-height: 36px;
 `
 
 const Tags = styled.ul`
@@ -78,22 +75,21 @@ const Tags = styled.ul`
 `
 
 const Tag = styled.li`
-  background: #43d76d url(${label}) no-repeat 10px 6px;
+  background: #9ae19d url(${label}) no-repeat 16px 11px;
   display: inline-block;
   border-radius: 999px;
-  padding: 8px 14px 6px 38px;
+  padding: 13px 16px 13px 48px;
   color: #fff;
-  margin: 0 10px 10px 0;
+  margin: 0 15px 10px 0;
+  box-shadow: 6px 4px 0px #43d76d;
 `
 
 const TagHeading = styled.h2`
   font-family: ${styles.fonts.headings};
   color: #43d76d;
-  font-size: 21px;
+  font-size: 28px;
   margin: 0;
   padding: 0;
-  text-transform: uppercase;
-  font-weight: 600;
   line-height: 1;
 `
 
@@ -131,6 +127,7 @@ const Header = () => (
           </TextContainer>
         </FlexRow>
         <Copy>{blurb}</Copy>
+        <Line />
         <TagHeading>{techTitle}</TagHeading>
         <Tags>
           {techList.map(tag => (

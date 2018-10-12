@@ -1,8 +1,8 @@
 const styles = {
   fonts: {
-    copy: `'Vollkorn', serif`,
-    headings: `'Oswald', sans-serif`,
-    mono: `'Fira Mono', Courier`,
+    copy: `'Quicksand', san-serif`,
+    headings: `'Abril Fatface', serif`,
+    mono: `'Operator Mono', 'Fira Mono', Courier`,
   },
 }
 

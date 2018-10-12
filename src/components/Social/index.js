@@ -5,11 +5,11 @@ import Icon from '../Icon'
 
 import styles from '../../config/styles'
 
-const Wrapper = styled.header`
+const Wrapper = styled.section`
   background: #fff;
-  padding: 20px 20px 10px;
-  margin: 40px 20px;
-  border-radius: 4px;
+  padding: 40px 40px 30px;
+  margin: 80px 10px 40px;
+  border-radius: 8px;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
   position: relative;
 `
@@ -23,17 +23,16 @@ const Line = styled.div`
 
 const StyledHeading = styled.h4`
   margin: 0;
-  font-size: 28px;
+  font-size: 42px;
   font-family: ${styles.fonts.headings};
-  text-transform: uppercase;
   line-height: 1;
   color: #c75777;
 `
 
 const Copy = styled.div`
   & > p {
-    font-size: 18px;
-    line-height: 1.45;
+    font-size: 21px;
+    line-height: 36px;
   }
   & > p > code {
     border-radius: 8px;
@@ -75,6 +74,11 @@ const SocialName = styled.a`
   color: #c75777;
   margin-top: 10px;
   text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #a53152;
+  }
 `
 
 const FlexRow = styled.div`
