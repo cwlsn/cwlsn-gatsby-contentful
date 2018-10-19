@@ -10,8 +10,6 @@ import RepoLink from '../components/RepoLink'
 import styles from '../config/styles'
 
 injectGlobal`
-	@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Oswald:600|Vollkorn');
-
 	body {
 		margin: 0;
 		color: #333;
@@ -29,6 +27,10 @@ class IndexPage extends Component {
           <meta
             name="description"
             content="Connor Wilson is a front-end developer based out of Toronto, ON."
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Abril+Fatface|Fira+Mono|Quicksand"
+            rel="stylesheet"
           />
         </Helmet>
         <Container>
