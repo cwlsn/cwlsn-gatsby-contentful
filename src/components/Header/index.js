@@ -118,7 +118,7 @@ const Header = () => (
       },
     }) => (
       <Wrapper>
-        <StyledFace src={face} />
+        <StyledFace src={face} alt="Connor Wilson, Front-end Developer" />
         <FlexRow>
           <TextContainer>
             <Line />

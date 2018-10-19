@@ -24,7 +24,13 @@ class IndexPage extends Component {
   render() {
     return (
       <>
-        <Helmet title="Connor Wilson | Front-end Developer" />
+        <Helmet title="Connor Wilson | Front-end Developer">
+          <html lang="en" />
+          <meta
+            name="description"
+            content="Connor Wilson is a front-end developer based out of Toronto, ON."
+          />
+        </Helmet>
         <Container>
           <Header />
           <Currently />
