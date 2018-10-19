@@ -10,7 +10,7 @@ import RepoLink from '../components/RepoLink'
 import styles from '../config/styles'
 
 injectGlobal`
-	@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Oswald:600|Vollkorn');
+	@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Abril+Fatface:600|Quicksand');
 
 	body {
 		margin: 0;
