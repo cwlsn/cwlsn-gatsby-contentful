@@ -3,8 +3,8 @@ if (process.env.ENVIROMENT !== 'production') {
 }
 
 const contentfulConfig = {
-  spaceId: process.env.SPACE_ID,
-  accessToken: process.env.ACCESS_TOKEN,
+  spaceId: 'otcg69yadk3e',
+  accessToken: '78b70adafbc928e1e8ff67f5a852b756386f9c97b85bc6d2e402142c2ac026d8',
 }
 
 module.exports = {

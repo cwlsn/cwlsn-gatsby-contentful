@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
+import { theme } from '../../util/theme'
 
 const Wrapper = styled.footer`
   text-align: center;
   margin: 0 20px 40px;
-  font-size: 21px;
-  color: #999;
+  font-size: ${theme.fontSize(0)};
 `
 
 const Copy = styled.div`
   & > p {
+    color: ${theme.color('light.2')};
     margin: 0;
     display: flex;
     align-items: center;
@@ -20,12 +21,12 @@ const Copy = styled.div`
   }
 
   & > p > a {
-    color: #df8f27;
+    color: ${theme.color('brand.primary.1')};
     margin: 0;
     transition: color 0.3s;
 
     &:hover {
-      color: #a76612;
+      color: ${theme.color('brand.secondary.2')};
     }
   }
 `

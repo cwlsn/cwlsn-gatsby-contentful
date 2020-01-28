@@ -2,24 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 
-import styles from '../../config/styles'
+import { theme } from '../../util/theme'
 import face from './face.jpg'
 import label from './label.svg'
 
-const Wrapper = styled.section`
-  background: #fff;
+export const Wrapper = styled.section`
+  background: ${theme.color('dark.0')};
   padding: 40px 40px 30px;
   margin: 80px 10px 40px;
-  border-radius: 8px;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: ${theme.radius('flat')};
+  box-shadow: ${theme.shadow('soft')} ${theme.color('dark.2')};
   position: relative;
+  color: ${theme.color('light.1')};
 `
 
-const Line = styled.div`
-  background: #43d76d;
-  height: 5px;
-  width: 75px;
-  margin: 0 0 20px 0;
+export const Line = styled.div`
+  background: ${theme.color('brand.primary.1')};
+  height: 7px;
+  width: 125px;
+  margin: 0 0 40px 0;
+  border-radius: ${theme.radius('round')};
 `
 
 const StyledFace = styled.img`
@@ -47,25 +49,27 @@ const TextContainer = styled.div`
 `
 
 const Title = styled.h1`
-  font-family: ${styles.fonts.headings};
-  color: #43d76d;
+  font-family: ${theme.font('headings')};
+  color: ${theme.color('light.0')};
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-size: 42px;
+  font-size: ${theme.fontSize(3)};
 `
 
 const SubHead = styled.h2`
-  color: #bbb;
+  color: ${theme.color('light.2')};
   margin: 0;
   padding: 8px 0 0 0;
   line-height: 1;
-  font-size: 21px;
+  font-size: ${theme.fontSize(0)};
+  text-transform: uppercase;
 `
 
 const Copy = styled.p`
-  font-size: 21px;
+  font-size: ${theme.fontSize(1)};
   line-height: 36px;
+  color: ${theme.color('light.0')};
 `
 
 const Tags = styled.ul`
@@ -75,20 +79,20 @@ const Tags = styled.ul`
 `
 
 const Tag = styled.li`
-  background: #9ae19d url(${label}) no-repeat 16px 11px;
+  background: ${theme.color('dark.0')} url(${label}) no-repeat 16px 11px;
   display: inline-block;
-  border-radius: 999px;
+  border-radius: 5px;
   padding: 13px 16px 13px 48px;
-  color: #fff;
+  color: ${theme.color('light.0')};
   margin: 0 15px 10px 0;
-  box-shadow: 6px 4px 0px #43d76d;
+  box-shadow: ${theme.shadow('hard')} ${theme.color('dark.1')};
 `
 
 const TagHeading = styled.h2`
-  font-family: ${styles.fonts.headings};
-  color: #43d76d;
+  font-family: ${theme.font('heading')};
+  color: ${theme.color('light[1]')};
   font-size: 28px;
-  margin: 0;
+  margin: 0 0 30px 0;
   padding: 0;
   line-height: 1;
 `
