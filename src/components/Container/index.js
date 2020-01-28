@@ -7,6 +7,8 @@ const Wrapper = styled.div`
   max-width: 960px;
 `
 
-const Container = ({ children }) => <Wrapper>{children}</Wrapper>
+function Container({ children }) {
+  return <Wrapper>{children}</Wrapper>
+}
 
 export default Container

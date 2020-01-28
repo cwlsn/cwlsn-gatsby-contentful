@@ -2,45 +2,29 @@ import React from 'react'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 import Icon from '../Icon'
-
-import styles from '../../config/styles'
-
-const Wrapper = styled.section`
-  background: #fff;
-  padding: 40px 40px 30px;
-  margin: 80px 10px 40px;
-  border-radius: 8px;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.15);
-  position: relative;
-`
-
-const Line = styled.div`
-  background: #c75777;
-  height: 5px;
-  width: 75px;
-  margin: 0 0 20px 0;
-`
+import { Wrapper, Line } from '../Header'
+import { theme } from '../../util/theme'
 
 const StyledHeading = styled.h4`
   margin: 0;
-  font-size: 42px;
-  font-family: ${styles.fonts.headings};
+  font-size: ${theme.fontSize(2)};
+  font-family: ${theme.font('headings')};
   line-height: 1;
-  color: #c75777;
+  color: ${theme.color('brand.secondary.2')};
 `
 
 const Copy = styled.div`
   & > p {
-    font-size: 21px;
+    font-size: ${theme.fontSize(1)};
     line-height: 36px;
   }
   & > p > code {
-    border-radius: 8px;
-    background: #c75777;
+    border-radius: ${theme.radius('flat')};
+    background: ${theme.color('dark.3')};
     white-space: nowrap;
     color: #fff;
     padding: 3px 8px;
-    font-family: ${styles.fonts.mono};
+    font-family: ${theme.font('mono')};
   }
 `
 
@@ -48,17 +32,16 @@ const Item = styled.div`
   display: flex;
   flex-flow: column;
   padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #d8e4ed;
+  border-radius: ${theme.radius('flat')};
   box-sizing: border-box;
   width: 33%;
   margin: 0 20px 20px 0;
-  font-size: 18px;
+  font-size: ${theme.fontSize(1)};
   font-weight: bold;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #666;
+  color: ${theme.color('light.2')};
 
   &:last-child {
     margin-right: 0;
@@ -71,13 +54,13 @@ const Item = styled.div`
 `
 
 const SocialName = styled.a`
-  color: #c75777;
+  color: ${theme.color('brand.primary.1')};
   margin-top: 10px;
   text-decoration: none;
   transition: color 0.3s;
 
   &:hover {
-    color: #a53152;
+    color: ${theme.color('brand.secondary.2')};
   }
 `
 
