@@ -1,7 +1,7 @@
 const styles = {
   fonts: {
     copy: `'Proxima Nova', sans-serif`,
-    headings: `'Crimson Texr', serif`,
+    headings: `'Crimson Text', serif`,
     mono: `'Operator Mono', 'Fira Mono', Courier`,
   },
   fontSizes: ['16px', '24px', '36px', '52px'],
