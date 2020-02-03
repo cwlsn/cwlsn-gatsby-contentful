@@ -34,7 +34,7 @@ class IndexPage extends Component {
             content="Connor Wilson is a front-end developer based out of Toronto, ON."
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Crimson+Text|Fira+Mono|Proxima+Nova"
+            href="https://fonts.googleapis.com/css?family=Crimson+Text:700|Fira+Code|Montserrat&display=swap"
             rel="stylesheet"
           />
         </Helmet>
