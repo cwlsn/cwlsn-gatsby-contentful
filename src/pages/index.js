@@ -14,12 +14,7 @@ const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		color: #333;
 		font-family: ${styles.fonts.copy};
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fc8803+0,fc036f+100 */
-    background: #fc8803; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #fc8803 0%, #fc036f 100%); /* FF3.6-15 */
-    background: -webkit-radial-gradient(center, ellipse cover,  #fc8803 0%,#fc036f 100%); /* Chrome10-25,Safari5.1-6 */
-    background: radial-gradient(ellipse at center,  #fc8803 0%,#fc036f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc8803', endColorstr='#fc036f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #fff;
 	}
 `
 
@@ -34,7 +29,7 @@ class IndexPage extends Component {
             content="Connor Wilson is a front-end developer based out of Toronto, ON."
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Crimson+Text:700|Fira+Code|Montserrat&display=swap"
+            href="https://fonts.googleapis.com/css?family=Crimson+Text:700|Fira+Code|Inter&display=swap"
             rel="stylesheet"
           />
         </Helmet>
