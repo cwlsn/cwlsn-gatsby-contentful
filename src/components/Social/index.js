@@ -10,7 +10,7 @@ const StyledHeading = styled.h4`
   font-size: ${theme.fontSize(2)};
   font-family: ${theme.font('headings')};
   line-height: 1;
-  color: ${theme.color('brand.secondary.2')};
+  color: ${theme.color('brand.secondary.1')};
 `
 
 const Copy = styled.div`
@@ -20,10 +20,10 @@ const Copy = styled.div`
   }
   & > p > code {
     border-radius: ${theme.radius('flat')};
-    background: ${theme.color('dark.3')};
+    background: ${theme.color('dark.2')};
     white-space: nowrap;
     color: #fff;
-    padding: 3px 8px;
+    padding: 3px 12px;
     font-family: ${theme.font('mono')};
   }
 `
@@ -41,7 +41,7 @@ const Item = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: ${theme.color('light.2')};
+  color: ${theme.color('brand.secondary.1')};
 
   &:last-child {
     margin-right: 0;

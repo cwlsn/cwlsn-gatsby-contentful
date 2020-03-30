@@ -11,7 +11,7 @@ const Wrapper = styled.footer`
 
 const Copy = styled.div`
   & > p {
-    color: ${theme.color('light.2')};
+    color: ${theme.color('dark.2')};
     margin: 0;
     display: flex;
     align-items: center;

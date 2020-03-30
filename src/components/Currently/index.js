@@ -5,7 +5,7 @@ import { theme } from '../../util/theme'
 import { Wrapper, Line } from '../Header'
 
 const StyledHeading = styled.h3`
-  color: ${theme.color('brand.secondary.2')};
+  color: ${theme.color('dark.1')};
   font-size: ${theme.fontSize(3)};
   margin: 0;
   line-height: 1;
@@ -20,18 +20,18 @@ const StyledSubHeading = styled(StyledHeading)`
 
 const Copy = styled.div`
   & > p {
-    color: ${theme.color('light.0')};
+    color: ${theme.color('dark.2')};
     font-size: ${theme.fontSize(1)};
     line-height: 36px;
     margin-bottom: 30px;
   }
 
   & > p > a {
-    color: ${theme.color('brand.secondary.2')};
+    color: ${theme.color('brand.primary.1')};
     transition: color 0.3s;
 
     &:hover {
-      color: ${theme.color('brand.primary.1')};
+      color: ${theme.color('brand.secondary.1')};
     }
   }
 `
@@ -80,9 +80,9 @@ const ItemText = styled.div`
   & > p {
     line-height: 24px;
     font-size: ${theme.fontSize(0)};
-    color: ${theme.color('light.1')};
+    color: ${theme.color('dark.1')};
     margin: 0;
-    padding: 0;
+    padding: 0 10px 0 0;
   }
   &.with_slides {
     padding-bottom: 40px;
